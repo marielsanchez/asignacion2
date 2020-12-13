@@ -1,6 +1,6 @@
 package sorts
 
-func insertionsort(items []int) {
+func InsertionSort(items []int) {
 	var n = len(items)
 	for i := 1; i < n; i++ {
 		j := i
