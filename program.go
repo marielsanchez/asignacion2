@@ -1,15 +1,12 @@
 package main
 
 import (
-	"fmt"
 	"sorts"
 )
 
 func main() {
-
 	slice := sorts.GenerateSlice(20)
-	fmt.Println("\n--- Unsorted --- \n\n", slice)
-	sorts.InsertionSort(slice)
-	fmt.Println("\n--- Sorted ---\n\n", slice)
-
+	slice1 := sorts.GenerateSlice(20)
+	sorts.HeapSort(slice)
+	sorts.InsertionSort(slice1)
 }
