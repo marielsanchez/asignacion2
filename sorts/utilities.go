@@ -1,30 +1,20 @@
 package sorts
 
-import (
-	"math/rand"
-	"time"
-)
+//GenerateRandomNumbers es una función generadora de números pseudoaleatorios
+func GenerateRandomNumbers(size int, seed int) []int {
 
-// Generates a slice of size, size filled with random numbers
-func GenerateSlice(size int) []int {
+	m := 2048 //Periodo
+	a := 109  //Multiplicador
+	c := 0    //Incremento = 0, es Método de Congruencia Lineal Multiplicativa
 
 	slice := make([]int, size, size)
-	rand.Seed(time.Now().UnixNano())
-	for i := 0; i < size; i++ {
-		// slice : max - min
-		slice[i] = rand.Intn(999) - 0
+	slice[0] = formula(a, seed, c, m)
+	for i := 1; i < size; i++ {
+		slice[i] = formula(a, slice[i-1], c, m)
 	}
 	return slice
 }
 
-// Generates a slice of size n and in a range of 0 and 31
-func GenerateSliceGraph(size int) []int {
-
-	slice := make([]int, size, size)
-	rand.Seed(time.Now().UnixNano())
-	for i := 0; i < size; i++ {
-		// slice : max - min
-		slice[i] = rand.Intn(31) - 0
-	}
-	return slice
+func formula(a int, xn int, c int, m int) int {
+	return (a*xn + c) % m % 31
 }

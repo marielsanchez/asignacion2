@@ -1,19 +1,7 @@
 package sorts
 
-import (
-	"fmt"
-)
-
 //InsertionSort calls the algoritms to do all the sorting
-func InsertionSort(numbers []int) {
-
-	fmt.Println("\n--- Unsorted --- \n\n", numbers)
-	InsertionSortFunc(numbers)
-	fmt.Println("\n--- Sorted by insertion sort---\n\n", numbers)
-
-}
-
-func InsertionSortFunc(items []int) {
+func InsertionSort(items []int) {
 	var n = len(items)
 	for i := 1; i < n; i++ {
 		j := i

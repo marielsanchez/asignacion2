@@ -5,12 +5,12 @@ import (
 )
 
 //HeapSort calls the algoritms to do all the sorting
-func HeapSort(numbers []int) {
-
+func HeapSort() {
+	slice := GenerateRandomNumbers(20, 11)
 	var heap = new(Heap)
-	fmt.Println("\n--- Unsorted --- \n\n", numbers)
-	heap.HeapSort(numbers)
-	fmt.Println("\n--- Sorted by heap sort ---\n\n", numbers)
+	fmt.Println("\n--- Unsorted --- \n\n", slice)
+	heap.HeapSort(slice)
+	fmt.Println("\n--- Sorted by heap sort ---\n\n", slice)
 
 }
 
